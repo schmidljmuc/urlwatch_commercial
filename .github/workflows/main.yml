@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel
-          pip install html2text urlwatch
+          pip install pyOpenSSL html2text urlwatch
       - name: Download cached db
         continue-on-error: true
         uses: dawidd6/action-download-artifact@v2
