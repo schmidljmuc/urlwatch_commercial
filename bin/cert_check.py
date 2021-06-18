@@ -117,7 +117,7 @@ def main(argv):
     parser.add_argument('-a', '--all', help='check list of host from the file', action='store_true')
 
     args = parser.parse_args()
-    print(args)
+    #print(args)
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit()
