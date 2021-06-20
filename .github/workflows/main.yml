@@ -3,7 +3,7 @@ name: urlwatch
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: '0,30 * * * *'
   workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
         with:
           workflow: main.yml
           workflow_conclusion: completed
-          branch: master
+          branch: main
           name: cachedb
       - name: Set secret
         run: |
