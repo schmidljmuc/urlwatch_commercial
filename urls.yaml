@@ -2,29 +2,29 @@
 name: "monthly watchdog"
 command: "date +\"%Y-%m\""
 ---
-# Site of Wirecard                                                                           
-name: "Status Wirecard"                                                                     
-url: "https://api.wirecard.com/engine/status/"                                              
-filter:                                                                                     
+# Site of Wirecard
+name: "Status Wirecard"
+url: "https://api.wirecard.com/engine/status/"
+filter:
+  - re.sub:
+     pattern: '                                                                                                                                '  
+     repl: ''
+  - html2text
+  - strip
+  - re.sub:
+     pattern: '\s+Monitored'
+     repl: ' Monitored'
+  - re.sub:
+     pattern: '\s+Failing'
+     repl: ' Failing'
   - re.sub:                                                                                 
-     pattern: '                                                                                                                                '                                         
+     pattern: '                                                        '
      repl: ''                                                                               
-  - html2text                                                                               
-  - strip                                                                                   
-  - re.sub:                                                                                 
-     pattern: '\s+Monitored'                                                                
-     repl: ' Monitored'                                                                     
-  - re.sub:                                                                                 
-     pattern: '\s+Failing'                                                                  
-     repl: ' Failing'                                                                       
-  - re.sub:                                                                                 
-     pattern: '                                                        '                    
-     repl: ''                                                                               
-  - grepi: "^.*Status$"                                                                     
-  - grepi: "^.*Service$"                                                                    
-  - grepi: "^.*Result$"                                                                     
-  - grepi: "^Engine Clock.*$"                                                               
-  - grepi: "^.*0000.*$"                                                                     
+  - grepi: "^.*Status$"
+  - grepi: "^.*Service$"
+  - grepi: "^.*Result$"
+  - grepi: "^Engine Clock.*$"
+  - grepi: "^.*0000.*$"
 ---
 # Cert of SOA (Oracle CRM)
 name: "Cert of SOA (Oracle CRM)"
