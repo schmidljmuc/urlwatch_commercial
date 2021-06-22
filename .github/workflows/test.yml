@@ -1,4 +1,4 @@
-name: urlwatch
+name: urlwatch-test
 
 on:
   push:
