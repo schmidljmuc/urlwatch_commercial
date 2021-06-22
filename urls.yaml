@@ -6,20 +6,11 @@ command: "date +\"%Y-%m\""
 name: "Status Wirecard"
 url: "https://api.wirecard.com/engine/status/"
 filter:
-  - re.sub:
-     pattern: '                                                                                                                                '  
-     repl: ''
   - html2text
   - strip
-  - re.sub:
-     pattern: '\s+Monitored'
-     repl: ' Monitored'
-  - re.sub:
-     pattern: '\s+Failing'
-     repl: ' Failing'
   - re.sub:                                                                                 
-     pattern: '                                                        '
-     repl: ''                                                                               
+     pattern: '(?m)^\s*'
+     repl: ''                                                                           
   - grepi: "^.*Status$"
   - grepi: "^.*Service$"
   - grepi: "^.*Result$"
