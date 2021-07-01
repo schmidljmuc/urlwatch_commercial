@@ -1,21 +1,15 @@
-# Site of Wirecard
-name: "Status Wirecard"
-url: "https://api.wirecard.com/engine/status/"
+# Site of Getnet
+name: "Status Getnet"
+url: "https://api.getneteurope.com/engine/status/"
 filter:
   - html2text
   - strip
   - re.sub:                                                                                 
      pattern: '(?m)^\s*'
-     repl: ''
-#  - re.sub:
-#     pattern: '\s+Monitored'
-#     repl: ' Monitored'
-#  - re.sub:
-#     pattern: '\s+Failing'
-#     repl: ' Failing'                                                                               
+     repl: ''                                                                           
   - grepi: "^.*Status$"
   - grepi: "^.*Service$"
   - grepi: "^.*Result$"
-#  - grepi: "^Engine Clock.*$"
-#  - grepi: "^.*0000.*$"
+  - grepi: "^Engine Clock.*$"
+  - grepi: "^.*0000.*$"
 ---
