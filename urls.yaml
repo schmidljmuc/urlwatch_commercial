@@ -31,4 +31,28 @@ command: "python3 ./bin/cert_check.py -n www.munich-airport.de"
 ---
 # Cert of Parken
 name: "Cert of Parken"
-command: "python3 ./bin/cert_check.py -n parken.munich-airport.de -no-ip" 
+command: "python3 ./bin/cert_check.py -n parken.munich-airport.de -no-ip"
+---
+# Cert of POI-Hub MUC
+name: "Cert of POI-Hub MUC"
+command: "python3 ./bin/cert_check.py -n poi-hub.munich-airport.de" 
+---
+# Cert of POI-Hub MUC (Test)
+name: "Cert of POI-Hub MUC (Test)"
+command: "python3 ./bin/cert_check.py -n poi-hub-test.munich-airport.de" 
+---
+# Cert of POI-Hub FRA
+name: "Cert of POI-Hub FRA"
+command: "python3 ./bin/cert_check.py -n portal-fra.passngr.de" 
+---
+# Cert of POI-Hub FRA (Test)
+name: "Cert of POI-Hub FRA (Test)"
+command: "python3 ./bin/cert_check.py -n portal-fra-test.passngr.de" 
+---
+# Cert of POI-Hub HAM
+name: "Cert of POI-Hub HAM"
+command: "python3 ./bin/cert_check.py -n portal-ham.passngr.de" 
+---
+# Cert of POI-Hub HAM (Test)
+name: "Cert of POI-Hub HAM (Test)"
+command: "python3 ./bin/cert_check.py -n portal-ham-test.passngr.de"
