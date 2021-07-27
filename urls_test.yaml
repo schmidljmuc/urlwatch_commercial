@@ -1,4 +1,7 @@
-# Changes nginx
-name: "Changes nginx"
-url: "http://nginx.org/en/CHANGES"
+# Security Advisories nginx
+name: "Security Advisories nginx"
+url: "http://nginx.org/en/security_advisories.html"
+filter:
+   - element-by-id: content
+   - html2text
 ---
