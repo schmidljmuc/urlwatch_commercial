@@ -1,15 +1,4 @@
-# Site of Getnet
-name: "Status Getnet"
-url: "https://api.getneteurope.com/engine/status/"
-filter:
-  - html2text
-  - strip
-  - re.sub:                                                                                 
-     pattern: '(?m)^\s*'
-     repl: ''                                                                           
-  - grepi: "^.*Status$"
-  - grepi: "^.*Service$"
-  - grepi: "^.*Result$"
-  - grepi: "^Engine Clock.*$"
-  - grepi: "^.*0000.*$"
+# Changes nginx
+name: "Changes nginx"
+url: "http://nginx.org/en/CHANGES"
 ---
