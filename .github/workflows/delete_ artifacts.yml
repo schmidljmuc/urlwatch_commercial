@@ -1,15 +1,16 @@
 name: Delete old artifacts
 on:
   schedule:
-    - cron: '20 17 * * *'
+    - cron: '10 18 * * *'
 
 jobs:
   delete-artifacts:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       #- uses: kolpav/purge-artifacts-action@v1
       - uses: c-hive/gha-remove-artifacts@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          #token: ${{ secrets.GITHUB_TOKEN }}
           age: '8 days'
           #expire-in: 8days
