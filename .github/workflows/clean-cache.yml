@@ -1,0 +1,54 @@
+name: urlwatch
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@v1.1.1
+        with:
+          timezone: Europe/Berlin
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.3'
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip wheel
+          pip install pyOpenSSL html2text urlwatch
+      - name: Download cached db
+        # only for first run needed
+        # continue-on-error: true
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: main.yml
+          workflow_conclusion: success
+          branch: main
+          name: cachedb
+      - name: clean cache of urlwatch
+        run: |
+          urlwatch --config=urlwatch.yaml --urls=urls.yaml --cache=cache.db --gc-cache
+      - name: Upload updated db
+        uses: actions/upload-artifact@v2
+        with:
+          name: cachedb
+          path: cache.db
+          retention-days: 3
