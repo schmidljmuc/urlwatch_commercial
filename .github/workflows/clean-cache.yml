@@ -46,6 +46,7 @@ jobs:
       - name: clean cache of urlwatch
         run: |
           urlwatch --config=urlwatch.yaml --urls=urls.yaml --cache=cache.db --gc-cache
+          sqlite3 cache.db "VACUUM;"
       - name: Upload updated db
         uses: actions/upload-artifact@v2
         with:
