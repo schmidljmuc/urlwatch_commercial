@@ -46,8 +46,8 @@ jobs:
       - name: Set secret and env
         run: |
           sed -i "s/aws_ses_password/${{ secrets.AWS_SES_PASSWORD }}/" urlwatch.yaml
-          echo "::set-env name=DAY_OF_WEEK::$( date +%a )"
-          echo "::set-env name=HOUR_OF_DAY::$( date +%H )"
+          echo "DAY_OF_WEEK=$( date +%a )" >> $GITHUB_ENV
+          echo "HOUR_OF_DAY=$( date +%H )" >> $GITHUB_ENV
       - name: Run urlwatch
         run: |
           urlwatch --config=urlwatch.yaml --urls=urls.yaml --cache=cache.db
