@@ -1,4 +1,4 @@
-name: urlwatch
+name: clean cache of urlwatch
 
 on:
   push:
