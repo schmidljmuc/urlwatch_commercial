@@ -102,3 +102,7 @@ command: "python3 ./bin/cert_check.py -n portal.passngr.de"
 # Cert of Portal Passngr (Test)
 name: "Cert of Portal Passngr (Test)"
 command: "python3 ./bin/cert_check.py -n portal-test.passngr.de"
+---
+# Cert of SAM
+name: "Cert of SAM"
+command: "python3 ./bin/cert_check.py -n sam.munich-airport.de"
