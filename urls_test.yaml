@@ -7,4 +7,6 @@ filter:
      selector: body
      exclude: span.hidden-text-expander.inline
   - html2text
+  - grepi: 'zip'
+  - grepi: 'tar.gz'
 ---
