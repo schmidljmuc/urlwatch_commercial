@@ -1,4 +1,7 @@
 # Cert of SOA (Oracle CRM)
-name: "Cert of SAM"
-command: "python3 ./bin/cert_check.py -n sam.munich-airport.de"
+name: "Release of Cockpit"
+url: https://github.com/agentejo/cockpit/tags
+filter:
+  - xpath: (//div[contains(@class, 'commit')])[position() >= 1 and position() <= 3]
+  - html2text
 ---
