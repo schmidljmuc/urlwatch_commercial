@@ -3,5 +3,8 @@ name: "Release of Cockpit"
 url: https://github.com/agentejo/cockpit/tags
 filter:
   - xpath: (//div[contains(@class, 'commit')])[position() >= 1 and position() <= 3]
+  - css:
+     selector: body
+     exclude: span.hidden-text-expander.inline
   - html2text
 ---
