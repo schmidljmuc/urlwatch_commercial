@@ -131,5 +131,5 @@ name: "Cert of API Passngr"
 command: "python3 ./bin/cert_check.py -n api.passngr.de" 
 ---
 # Cert of API Passngr (Dev)
-name: "Cert of Homepage API (Dev)"
+name: "Cert of API Passngr (Dev)"
 command: "python3 ./bin/cert_check.py -n api-dev.passngr.de"
