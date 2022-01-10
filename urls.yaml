@@ -117,3 +117,19 @@ filter:
   - html2text
   - grepi: 'zip'
   - grepi: 'tar.gz'
+---
+# Cert of Homepage Passngr
+name: "Cert of Homepage Passngr"
+command: "python3 ./bin/cert_check.py -n www.passngr.de" 
+---
+# Cert of Homepage Passngr (Dev)
+name: "Cert of Homepage Passngr (Dev)"
+command: "python3 ./bin/cert_check.py -n www-dev.passngr.de"
+---
+# Cert of API Passngr
+name: "Cert of API Passngr"
+command: "python3 ./bin/cert_check.py -n api.passngr.de" 
+---
+# Cert of API Passngr (Dev)
+name: "Cert of Homepage API (Dev)"
+command: "python3 ./bin/cert_check.py -n api-dev.passngr.de"
