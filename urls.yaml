@@ -133,3 +133,11 @@ command: "python3 ./bin/cert_check.py -n api.passngr.de"
 # Cert of API Passngr (Dev)
 name: "Cert of API Passngr (Dev)"
 command: "python3 ./bin/cert_check.py -n api-dev.passngr.de"
+---
+# Cert of API WLAN
+name: "Cert of API WLAN"
+command: "python3 ./bin/cert_check.py -n api.munich-airport.de" 
+---
+# Cert of Homepage WLAN
+name: "Cert of Homepage WLAN"
+command: "python3 ./bin/cert_check.py -n wifi.munich-airport.de"
