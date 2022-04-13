@@ -19,7 +19,7 @@ jobs:
         with:
           timezone: Europe/Berlin
       - uses: actions/checkout@v2
-      - name: Configure AWS credentialsfrom Test account
+      - name: Configure AWS credentials for SES_Github_Monitoring
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::921405131417:role/SES_Github_Monitoring
