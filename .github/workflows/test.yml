@@ -19,7 +19,7 @@ jobs:
       - name: Configure AWS credentialsfrom Test account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
+          role-to-assume: arn:aws:iam::921405131417:role/SES_Github_Monitoring
           aws-region: eu-central-1
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
