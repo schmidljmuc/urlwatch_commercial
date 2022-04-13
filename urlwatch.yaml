@@ -23,7 +23,7 @@ report:
       starttls: true
       user: AKIA5NCAGRKM5KIH4GH7
     subject: '{count} changes: {jobs}'
-    to: 'pascal.bruckert@munich-airport.de'
+    to: 'pascal.bruckert@munich-airport.de,niclas.wilkin@munich-airport.de'
     #to: 'pascal.bruckert@munich-airport.de,markus.luecking@munich-airport.de'
   html:
     diff: unified

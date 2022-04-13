@@ -10,3 +10,7 @@ filter:
   - grepi: 'zip'
   - grepi: 'tar.gz'
 ---
+# AWS suppresion List (AeroParker)
+name: "AWS suppression list parken"
+command: "aws sesv2 get-supressed-destinations --email-address online.parken@munich-airport.de"
+---

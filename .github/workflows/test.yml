@@ -16,6 +16,11 @@ jobs:
         with:
           timezone: Europe/Berlin
       - uses: actions/checkout@v2
+      - name: Configure AWS credentialsfrom Test account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
+          aws-region: eu-central-1
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
@@ -37,4 +42,4 @@ jobs:
           sed -i "s/aws_ses_password/${{ secrets.AWS_SES_PASSWORD }}/" urlwatch.yaml
       - name: Run urlwatch
         run: |
-          urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 1
+          urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 2
