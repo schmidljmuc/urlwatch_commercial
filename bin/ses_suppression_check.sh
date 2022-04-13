@@ -19,7 +19,7 @@ if [[ -z $EMAIL ]]; then
 else
     aws sesv2 get-suppressed-destination --email-address $EMAIL > /dev/null 2>&1
     if [[ $? == 0 ]]; then
-        echo "Failure - Email address ${EMAIL} is on your suppression list."
+        echo "Failure - Email address ${EMAIL} exist on your suppression list."
     else
         echo "OK - Email address ${EMAIL} does not exist on your suppression list."
     fi
