@@ -12,5 +12,5 @@ filter:
 ---
 # AWS suppresion List (AeroParker)
 name: "AWS suppression list parken"
-command: "sh ./bin/ses_suppression_check.sh -e online.parken@munich-airport.de"
+command: "./bin/ses_suppression_check.sh -e online-parken@munich-airport.de"
 ---

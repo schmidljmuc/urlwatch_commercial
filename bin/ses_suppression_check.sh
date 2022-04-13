@@ -17,10 +17,10 @@ done
 if [[ -z $EMAIL ]]; then
     echo -e "Parameter missing! Usage: sh $0 '--email user@example.org'"
 else
-    aws sesv2 get-suppressed-destination --email-address $EMAIL
-    if [[ $? == 1 ]]; then
-        echo "OK - Email address ${EMAIL} does not exist on your suppression list."
-    else
+    aws sesv2 get-suppressed-destination --email-address $EMAIL > /dev/null 2>&1
+    if [[ $? == 0 ]]; then
         echo "Failure - Email address ${EMAIL} is on your suppression list."
+    else
+        echo "OK - Email address ${EMAIL} does not exist on your suppression list."
     fi
 fi
