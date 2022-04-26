@@ -22,6 +22,6 @@ else
         echo "Failure - Email address ${EMAIL} exist on your suppression list."
     aws sesv2 delete-suppressed-destination --email-address $EMAIL > /dev/null 2>&1
     else
-        echo "OK - Email address ${EMAIL} does not exist on your suppression list."
+        echo "OK return code $? - Email address ${EMAIL} does not exist on your suppression list."
     fi
 fi
