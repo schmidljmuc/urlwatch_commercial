@@ -154,3 +154,11 @@ command: "python3 ./bin/cert_check.py -n api-dev.munich-airport.de"
 # Cert of Homepage WLAN (Dev)
 name: "Cert of Homepage WLAN (Dev)"
 command: "python3 ./bin/cert_check.py -n wifi-dev.munich-airport.de"
+---
+# Cert of Getnet API
+name: "Cert of Getnet API"
+command: "python3 ./bin/cert_check.py -n api.getneteurope.com"
+---
+# Cert of Getnet PaymentPage
+name: "Cert of Getnet PaymentPage"
+command: "python3 ./bin/cert_check.py -n paymentpage.getneteurope.com"
