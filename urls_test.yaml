@@ -1,15 +1,5 @@
-# Site of Wirecard
-name: "Status Wirecard"
-url: "https://api.getneteurope.com/engine/status/"
-filter:
-  - html2text
-  - strip
-  - re.sub:                                                                                 
-     pattern: '(?m)^\s*'
-     repl: ''                                                                           
-  - grepi: "^.*Status$"
-  - grepi: "^.*Service$"
-  - grepi: "^.*Result$"
-  - grepi: "^Engine Clock.*$"
-  - grepi: "^.*0000.*$"
+# AWS suppresion List (AeroParker)
+name: "AWS suppression list parken"
+command: "chmod a+x ./bin/ses_suppression_check.sh && \
+          ./bin/ses_suppression_check.sh -e online-parken@munich-airport.de"
 ---
