@@ -146,3 +146,11 @@ command: "python3 ./bin/cert_check.py -n wifi.munich-airport.de"
 name: "AWS suppression list parken"
 command: "chmod a+x ./bin/ses_suppression_check.sh && \
           ./bin/ses_suppression_check.sh -e online-parken@munich-airport.de"
+---
+# Cert of API WLAN (Dev)
+name: "Cert of API WLAN (Dev)"
+command: "python3 ./bin/cert_check.py -n api-dev.munich-airport.de" 
+---
+# Cert of Homepage WLAN (Dev)
+name: "Cert of Homepage WLAN (Dev)"
+command: "python3 ./bin/cert_check.py -n wifi-dev.munich-airport.de"
