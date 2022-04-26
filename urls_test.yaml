@@ -1,6 +1,6 @@
 # Site of Wirecard
 name: "Status Wirecard"
-url: "https://api.wirecard.com/engine/status/"
+url: "https://api.getneteurope.com/engine/status/"
 filter:
   - html2text
   - strip
