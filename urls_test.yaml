@@ -1,5 +1,5 @@
 # AWS suppresion List (AeroParker)
 name: "AWS suppression list parken"
 command: "chmod a+x ./bin/ses_suppression_check.sh && \
-          ./bin/ses_suppression_check.sh -e online-parken@munich-airport.de"
+          ./bin/ses_suppression_check.sh -e online.parken@munich-airport.de"
 ---
