@@ -45,4 +45,4 @@ jobs:
           sed -i "s/aws_ses_password/${{ secrets.AWS_SES_PASSWORD }}/" urlwatch.yaml
       - name: Run urlwatch
         run: |
-          urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 1
+          urlwatch --config=urlwatch.yaml --urls=urls_test.yaml --test-filter 2
