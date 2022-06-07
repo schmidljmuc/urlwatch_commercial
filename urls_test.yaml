@@ -6,6 +6,7 @@ command: "chmod a+x ./bin/ses_suppression_check.sh && \
 # Monitoring status wifi.munich-airport.de
 name: "Wifi Munich Airport"
 url: "https://wifi.munich-airport.de/welcome/home.html"
+ssl_no_verify: true
 filter:
    - css: 
       selector: desktop-link
