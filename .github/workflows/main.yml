@@ -42,7 +42,7 @@ jobs:
           pip install pyOpenSSL html2text urlwatch
       - name: Download cached db
         # only for first run needed
-        # continue-on-error: true
+        continue-on-error: true
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: main.yml
