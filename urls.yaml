@@ -162,3 +162,8 @@ command: "python3 ./bin/cert_check.py -n api.getneteurope.com"
 # Cert of Getnet PaymentPage
 name: "Cert of Getnet PaymentPage"
 command: "python3 ./bin/cert_check.py -n paymentpage.getneteurope.com"
+---
+# Cert of JIRA
+name: "Cert of JIRA"
+command: "python3 ./bin/cert_check.py -n jira.getneteurope.com"
+
