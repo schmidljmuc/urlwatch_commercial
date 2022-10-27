@@ -28,7 +28,7 @@ jobs:
           role-to-assume: arn:aws:iam::921405131417:role/SES_Github_Monitoring
           aws-region: eu-central-1
       - name: Set up Python 3.x
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.8'
       - name: Cache pip
