@@ -18,12 +18,12 @@ jobs:
       contents: read
     steps:
       - name: Setup timezone
-        uses: zcong1993/setup-timezone@v1.1.1
+        uses: zcong1993/setup-timezone@v2.0.0
         with:
           timezone: Europe/Berlin
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Configure AWS credentials for SES_Github_Monitoring
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           role-to-assume: arn:aws:iam::921405131417:role/SES_Github_Monitoring
           aws-region: eu-central-1
@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: '3.8'
       - name: Cache pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -63,7 +63,7 @@ jobs:
           urlwatch --config=urlwatch.yaml --urls=urls.yaml --cache=cache.db --gc-cache
           sqlite3 cache.db "VACUUM;"
       - name: Upload updated db
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cachedb
           path: cache.db
