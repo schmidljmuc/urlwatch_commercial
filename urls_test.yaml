@@ -19,3 +19,9 @@ filter:
    - xpath:
       path: '//div[@class=video__description]//a[1]'
    - html2text
+---
+# AWS suppression list sicherheitsparken (Aeroparker)
+name: "AWS suppression list sicherheitsparken"
+command: "chmod a+x ./bin/ses_suppression_check.sh  && \
+          ./bin/ses_suppression_check.sh -e sicherheitsparken@munich-airport.de"
+---
