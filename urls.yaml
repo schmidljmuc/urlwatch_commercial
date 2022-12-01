@@ -2,24 +2,9 @@
 name: "monthly watchdog"
 command: "date +\"%Y-%m\""
 ---
-# Site of Wirecard
-name: "Status Wirecard"
-url: "https://api.wirecard.com/engine/status/"
-filter:
-  - html2text
-  - strip
-  - re.sub:                                                                                 
-     pattern: '(?m)^\s*'
-     repl: ''                                                                           
-  - grepi: "^.*Status$"
-  - grepi: "^.*Service$"
-  - grepi: "^.*Result$"
-  - grepi: "^Engine Clock.*$"
-  - grepi: "^.*0000.*$"
----
 # Site of Getnet
 name: "Status Getnet"
-url: "https://api.getneteurope.com/engine/status/"
+url: "https://api.getneteurope.com/engine/rest/ping"
 filter:
   - html2text
   - strip
